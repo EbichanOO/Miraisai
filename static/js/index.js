@@ -49,7 +49,7 @@ function speech_send() {
 		formdata.append('text', get_text)
 
 		$.ajax({
-			url: 'http://localhost:8080/menu',
+			url: 'https://miraisai.herokuapp.com/menu',
 			type: 'POST',
 			dataType: 'json',
 			data: formdata,
@@ -100,7 +100,7 @@ function img_send() {
 		formData.append('img', picture);
 
 		$.ajax({
-			url: 'http://localhost:8080/image',
+			url: 'https://miraisai.herokuapp.com/image',
 			type: 'POST',
 			data: formData,
 			contentType: false,
