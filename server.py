@@ -60,4 +60,4 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
   else:
     port = 3000
-  app.run(debug=True, port=port)
+  app.run(host='0.0.0.0', port=port, debug=True)
