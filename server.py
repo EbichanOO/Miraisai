@@ -52,4 +52,12 @@ def menu():
   return jsonify({'say': say_text, 'menus': next_menus})
 
 if __name__ == "__main__":
-  app.run(debug=True, port=8080)
+  import os
+  ON_HEROKU = os.environ.get('ON_HEROKU')
+
+  if ON_HEROKU:
+    # get the heroku port
+    port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
+  else:
+    port = 3000
+  app.run(debug=True, port=port)
